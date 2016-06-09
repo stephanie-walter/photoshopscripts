@@ -1,4 +1,4 @@
-photoshopscripts
+Layer Comp + Artboard Export script
 ================
 
 Assorted Photoshop scripts from https://github.com/antoniocosta/photoshopscripts
