@@ -4,6 +4,7 @@
 // ZStrings and auto layout by Tom Ruark
 // PNG support by Jeffrey Tranberry
 // Artboard support by Antonio Costa
+// Modified by Stephanie Walter to remove the _0001_ prefix
 
 /*
 @@@BUILDINFO@@@ Layer Comps To Files.jsx 1.0.0.24
@@ -222,12 +223,14 @@ function main() {
 
 
 							var fileNameBody = exportInfo.fileNamePrefix;
-							fileNameBody += "_" + zeroSuppress(compsIndex, 4);
-							fileNameBody += "_" + compRef.name;
+							//fileNameBody += "_" + zeroSuppress(compsIndex, 4);
+							//fileNameBody += compRef.name;
+
+
 							if (null != compRef.comment)    fileNameBody += "_" + compRef.comment;
 							fileNameBody = fileNameBody.replace(/[:\/\\*\?\"\<\>\|\\\r\\\n]/g, "_");  // '/\:*?"<>|\r\n' -> '_'                        
 							
-							fileNameBody += '-'+abAr[artbrdIndex].name;
+							fileNameBody += abAr[artbrdIndex].name+'_'+compRef.name;
 							
 							if (fileNameBody.length > 120) fileNameBody = fileNameBody.substring(0,120);
 
